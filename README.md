@@ -7,6 +7,7 @@
 本插件灵感及部分代码与构思来自于：
 
 **1.AstrBot 弗洛伊德双驱情绪管理插件** :https://github.com/middcom/astrbot_plugin_affection?tab=readme-ov-file
+
 **2.FavourPro - AI 内心状态模拟插件** :https://github.com/Catfish872/astrbot_plugin_favourpro
 
 ## 🌟 核心特性
