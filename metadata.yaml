@@ -1,0 +1,6 @@
+name: favorproplus # 这是你的插件的唯一识别名。
+desc: FavourProPluss是一款深度模拟人类心理动力学的高级情感引擎插件，通过潜意识双引擎架构将短时的 4D 情绪波动与长期的关系记忆相互作用，赋予 AI 具备环境感知力、物理惯性且极其真实的人格化交互灵魂。
+help:  # 插件的帮助信息
+version: v2.0.0 # 插件的版本号
+author: ThriEy
+repo: https://github.com/ThriEy/astrbot_plugin_favourproplus

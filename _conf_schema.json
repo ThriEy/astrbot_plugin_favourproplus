@@ -1,0 +1,100 @@
+{
+  "session_based": {
+    "description": "是否启用会话独立的状态系统",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后，每个群聊/私聊的状态将独立计算，关闭则使用全局统一状态。"
+  },
+    "global_turn_decay_rate": {
+    "description": "群聊氛围：对话衰减率 (0~1)",
+    "type": "float",
+    "default": 0.3,
+    "hint": "每有一人说话，群内上一个人的余波情绪消散多少。0.3代表消散30%。值越大，“迁怒”持续时间越短。"
+  },
+  "global_time_decay_hours": {
+    "description": "群聊氛围：时间衰减常数 (小时)",
+    "type": "float",
+    "default": 0.5,
+    "hint": "时间流逝带来的氛围平复。0.5代表半小时内群聊氛围就会恢复正常。"
+  },
+  "default_global_aggression": {
+    "description": "出厂性格：防备心偏移量 (-50~50)",
+    "type": "float",
+    "default": 0.0,
+    "hint": "正值代表自带傲娇/暴躁属性，负值代表自带温柔/宽容属性。"
+  },
+  "default_global_libido": {
+    "description": "出厂性格：亲近欲偏移量 (-50~50)",
+    "type": "float",
+    "default": 0.0,
+    "hint": "正值代表自带黏人/缺爱属性，负值代表自带高冷属性。"
+  },
+  "emotion_sensitivity": {
+    "description": "情绪变化敏感度 (0~1)",
+    "type": "float",
+    "default": 0.5,
+    "hint": "影响对话时产生的短期情绪增量强度。建议范围 0.1~0.8，值越大情绪越容易受语言波动。"
+  },
+
+  "turn_homeostasis_rate": {
+    "description": "对话情绪回落率 (0~1)",
+    "type": "float",
+    "default": 0.1,
+    "hint": "每轮对话情绪自动向基线回归的比例。0.1 表示每说一句话，偏离的情绪会自动消散 10%。"
+  },
+
+  "decay_enabled": {
+    "description": "是否启用情绪随时间衰减",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后，短期情绪将随时间推移平滑地回归到长期好感度决定的基线。"
+  },
+  "decay_check_interval_minutes": {
+    "description": "后台任务检查间隔（分钟）",
+    "type": "int",
+    "default": 10,
+    "hint": "每隔此时间检查一次衰减计算与空闲惩罚判定。"
+  },
+  "decay_duration_hours": {
+    "description": "指数衰减常数（小时）",
+    "type": "float",
+    "default": 3.0,
+    "hint": "控制情绪归于平静的速度。基于指数衰减逻辑，值越大情绪平复越慢。"
+  },
+  "decay_threshold_hours": {
+    "description": "触发衰减所需的最小空闲小时数",
+    "type": "float",
+    "default": 3.0,
+    "hint": "用户超过此时间未互动时，短期情绪开始向基线回归。"
+  },
+  "idle_threshold_hours": {
+    "description": "触发空闲惩罚的最小空闲小时数",
+    "type": "float",
+    "default": 6.0,
+    "hint": "超过此时间将触发【单峰函数惩罚】。不满情绪随失联时长增长，在12小时左右达到顶峰，随后转为冷淡。"
+  },
+  "idle_penalty_sensitivity": {
+    "description": "空闲惩罚强度 (0~1)",
+    "type": "float",
+    "default": 0.3,
+    "hint": "控制单峰惩罚函数波动的峰值强度。值越大，长时间不回消息时产生的防备心和疏离感越明显。"
+  },
+  "unconscious_llm": {
+    "description": "潜意识后台 LLM 配置",
+    "type": "object",
+    "items": {
+      "provider_id": {
+        "description": "LLM 提供商 ID（留空则自动使用默认）",
+        "type": "string",
+        "default": "",
+        "_special": "select_provider"
+      }
+    }
+  },
+  "debug_mode": {
+    "description": "调试模式",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后会在日志中输出情绪计算详情、衰减数值及空闲分析权重。"
+  }
+}
