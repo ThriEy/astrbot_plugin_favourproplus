@@ -5,6 +5,7 @@
 
 **免责声明：本代码主要由 AI 生成，开发者仅参与需求描述与逻辑校验。代码可能存在缺陷，请在使用前充分审查和测试。使用本代码所产生的一切风险与损失，开发者不承担责任。**
 本插件灵感及部分代码与构思来自于：
+
 **1.AstrBot 弗洛伊德双驱情绪管理插件** :https://github.com/middcom/astrbot_plugin_affection?tab=readme-ov-file
 **2.FavourPro - AI 内心状态模拟插件** :https://github.com/Catfish872/astrbot_plugin_favourpro
 
